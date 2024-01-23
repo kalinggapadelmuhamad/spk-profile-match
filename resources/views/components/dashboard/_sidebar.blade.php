@@ -37,14 +37,14 @@
     </li>
 
     <li class="nav-item {{ $page === 'nilai' ? 'active' : '' }}">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('penilaian.index') }}">
             <i class="fas  fa-fw fa-file-invoice"></i>
             <span>Nilai</span>
         </a>
     </li>
 
     <li class="nav-item {{ $page === 'metode' ? 'active' : '' }}">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('metode.index') }}">
             <i class="fas fa-fw fa-spinner"></i>
             <span>Metode</span>
         </a>

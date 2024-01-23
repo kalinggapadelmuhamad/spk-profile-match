@@ -30,25 +30,9 @@
 
         <div class="container d-flex justify-content-center">
             <div class="row align-self-center">
-                <div class="col-xl-6 col-lg-6 col-md-6 mt-5 d-none d-lg-block">
-                    <div class="card bg-none o-hidden border-0 my-5 text-white" style="background: none;">
-                        <div class="text-justify card-body p-0">
-                            <h4 class="font-weight-bold">Sistem Pendukung Keputusan Metode</h4>
-                            <h4 class="font-weight-bold">Profile Matching & Bubble Short</h4>
-                            <p class="pt-4">
-                                Sistem Pendukung Keputusan (SPK) merupakan sistem informasi interaktif yang menyediakan
-                                informasi, pemodelan, dan pemanipulasian data. Sistem itu digunakan untuk membantu
-                                pengambilan keputusan dalam situasi yang semi terstruktur dan situasi yang tidak
-                                terstruktur.
-                            </p>
-                            <p>
-                                Tambahin Teks Sendiri
-                            </p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-12 col-md-6 mx-auto">
+
+                <div class="col-12 mx-auto">
                     <div class="card o-hidden border-0 shadow-lg my-5">
                         <div class="card-body py-4 px-4">
                             <div class="mb-4">

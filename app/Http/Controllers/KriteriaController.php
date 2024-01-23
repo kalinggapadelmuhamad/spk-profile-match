@@ -30,7 +30,7 @@ class KriteriaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'code' => 'required|unique:kriterias,kode_kriteria',
+            'code' => 'required',
             'name' => 'required|unique:kriterias,nama',
             'tipe' => 'required',
             'nilai' => 'required',
@@ -61,8 +61,8 @@ class KriteriaController extends Controller
     public function update(Request $request, Kriteria $kriterium)
     {
         $request->validate([
-            'code' => 'required|unique:kriterias,kode_kriteria',
-            'name' => 'required|unique:kriterias,nama',
+            'code' => 'required',
+            'name' => 'required|unique:kriterias,nama,' . $kriterium->id,
             'tipe' => 'required',
             'nilai' => 'required',
         ]);
@@ -74,7 +74,7 @@ class KriteriaController extends Controller
             'bobot' => $request->nilai
         ]);
 
-        return Redirect::route('kriteria.index')->with('success', 'Kriteria berhasil di ubah.');
+        return Redirect::route('kriteria.index')->with('success', 'Kriteria berhasil di ubahs');
     }
 
     /**

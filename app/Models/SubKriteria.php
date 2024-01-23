@@ -10,19 +10,18 @@ class SubKriteria extends Model
     use HasFactory;
 
     protected $fillable = [
-        'uuid',
         'kriteria_id',
         'nama',
         'nilai'
     ];
 
-    public function Kriteria()
+    public function kriteria()
     {
         return $this->belongsTo(Kriteria::class);
     }
 
-    // public function Penilaian()
-    // {
-    //     return $this->hasMany(Penilaian::class);
-    // }
+    public function penilaian()
+    {
+        return $this->hasMany(Penilaian::class);
+    }
 }

@@ -30,4 +30,14 @@ class Alternatif extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function penilaian()
+    {
+        return $this->hasMany(Penilaian::class);
+    }
+
+    // public function Hasil()
+    // {
+    //     return $this->hasMany(Hasil::class);
+    // }
 }
