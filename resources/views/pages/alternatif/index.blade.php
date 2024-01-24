@@ -50,17 +50,19 @@
                                                 <a href="{{ route('alternatif.show', $alternatif) }}"
                                                     class="btn btn-sm btn-icon btn-warning m-1"><i
                                                         class="fas fa-eye"></i></a>
-                                                <a href="{{ route('alternatif.edit', $alternatif) }}"
-                                                    class="btn btn-sm btn-icon btn-success m-1"><i
-                                                        class="fas fa-pen"></i></a>
-                                                <form action="{{ route('alternatif.destroy', $alternatif) }}"
-                                                    method="post">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <button class="btn btn-sm btn-danger btn-icon m-1">
-                                                        <i class="fas fa-trash"></i>
-                                                    </button>
-                                                </form>
+                                                @if (Auth::user()->role != 'Juri')
+                                                    <a href="{{ route('alternatif.edit', $alternatif) }}"
+                                                        class="btn btn-sm btn-icon btn-success m-1"><i
+                                                            class="fas fa-pen"></i></a>
+                                                    <form action="{{ route('alternatif.destroy', $alternatif) }}"
+                                                        method="post">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button class="btn btn-sm btn-danger btn-icon m-1">
+                                                            <i class="fas fa-trash"></i>
+                                                        </button>
+                                                    </form>
+                                                @endif
                                             </div>
                                         </td>
                                     </tr>

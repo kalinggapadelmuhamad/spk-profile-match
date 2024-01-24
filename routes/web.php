@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KriteriaController;
 use App\Http\Controllers\MetodeController;
 use App\Http\Controllers\PenilaianController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubKriteriaController;
 use App\Models\Kriteria;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +24,8 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/', 'login');
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [DashboardController::class, 'index'])->name('home');
+
+    Route::resource('profile', ProfileController::class);
 
     Route::resource('alternatif', AlternatifController::class);
     Route::resource('kriteria', KriteriaController::class);

@@ -29,26 +29,31 @@
             </a>
         </li>
 
-        <li class="nav-item {{ $page === 'kriteria' ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('kriteria.index') }}">
-                <i class="fas fa-fw fa-poll-h"></i>
-                <span>Kriteria</span>
-            </a>
-        </li>
+        @if (Auth::user()->role == 'Admin')
+            <li class="nav-item {{ $page === 'kriteria' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('kriteria.index') }}">
+                    <i class="fas fa-fw fa-poll-h"></i>
+                    <span>Kriteria</span>
+                </a>
+            </li>
+        @endif
 
-        <li class="nav-item {{ $page === 'nilai' ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('penilaian.index') }}">
-                <i class="fas  fa-fw fa-file-invoice"></i>
-                <span>Nilai</span>
-            </a>
-        </li>
+        @if (Auth::user()->role == 'Admin' || Auth::user()->role == 'Juri')
+            <li class="nav-item {{ $page === 'nilai' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('penilaian.index') }}">
+                    <i class="fas  fa-fw fa-file-invoice"></i>
+                    <span>Nilai</span>
+                </a>
+            </li>
 
-        <li class="nav-item {{ $page === 'metode' ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('metode.index') }}">
-                <i class="fas fa-fw fa-spinner"></i>
-                <span>Metode</span>
-            </a>
-        </li>
+            <li class="nav-item {{ $page === 'metode' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('metode.index') }}">
+                    <i class="fas fa-fw fa-spinner"></i>
+                    <span>Metode</span>
+                </a>
+            </li>
+        @endif
+
 
         <li class="nav-item {{ $page === 'laporan' ? 'active' : '' }}">
             <a class="nav-link" href="">
@@ -65,17 +70,18 @@
         <div class="sidebar-heading">
             Master User
         </div>
-
-        <li class="nav-item {{ $page === 'user' ? 'active' : '' }}">
-            <a class="nav-link" href="">
-                <i class="fas fa-fw fa-users-cog"></i>
-                <span>User</span>
-            </a>
-        </li>
+        @if (Auth::user()->role == 'Admin')
+            <li class="nav-item {{ $page === 'user' ? 'active' : '' }}">
+                <a class="nav-link" href="">
+                    <i class="fas fa-fw fa-users-cog"></i>
+                    <span>User</span>
+                </a>
+            </li>
+        @endif
     @endif
 
     <li class="nav-item {{ $page === 'profile' ? 'active' : '' }}">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('profile.index') }}">
             <i class="fas fa-fw fa-user"></i>
             <span>Profile</span>
         </a>

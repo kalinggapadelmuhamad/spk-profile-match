@@ -20,7 +20,7 @@
                         IIB Darmajaya
                         <br>
                         @if (empty(Auth::user()->alternatif->semester1))
-                            Harap Segera lengkapi persyaratan di halaman <a href="">profile</a>
+                            Harap Segera lengkapi persyaratan di halaman <a href="{{ route('profile.index') }}">profile</a>
                         @else
                             Untuk informasi lebih lanjut silahkan kunjungi instagram <a href="">KMH Darmajaya</a>
                         @endif
