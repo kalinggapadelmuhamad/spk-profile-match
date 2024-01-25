@@ -36,8 +36,8 @@ class Alternatif extends Model
         return $this->hasMany(Penilaian::class);
     }
 
-    // public function Hasil()
-    // {
-    //     return $this->hasMany(Hasil::class);
-    // }
+    public function hasil()
+    {
+        return $this->hasMany(Hasil::class);
+    }
 }

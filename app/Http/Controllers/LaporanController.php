@@ -3,29 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alternatif;
-use App\Models\Hasil;
 use App\Models\Kriteria;
-use App\Models\Penilaian;
 use Illuminate\Http\Request;
 
-class MetodeController extends Controller
+class LaporanController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        Hasil::truncate();
-
-        $page = 'metode';
+        $page = 'laporan';
         $kriterias = Kriteria::orderBy('kode_kriteria', 'asc')->get();
         $alternatifs = Alternatif::orderBy('id')->get();
 
-        // $pemetaanGap = [];
-        // foreach($alternatifs as )
 
-
-        return view('pages.metode.index', compact(
+        return view('pages.laporan.index', compact(
             'page',
             'kriterias',
             'alternatifs'

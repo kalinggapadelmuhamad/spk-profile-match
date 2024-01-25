@@ -3,6 +3,7 @@
 use App\Http\Controllers\AlternatifController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KriteriaController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\MetodeController;
 use App\Http\Controllers\PenilaianController;
 use App\Http\Controllers\ProfileController;
@@ -41,4 +42,5 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('penilaian', PenilaianController::class);
     Route::resource('metode', MetodeController::class);
+    Route::resource('laporan', LaporanController::class);
 });

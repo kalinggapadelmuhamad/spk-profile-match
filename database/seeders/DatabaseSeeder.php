@@ -119,25 +119,25 @@ class DatabaseSeeder extends Seeder
                 'kode_kriteria' => 'CF',
                 'nama'          => 'IPK',
                 'type'          => 'Core Factor',
-                'bobot'         => 5
+                'bobot'         => 3
             ],
             [
                 'kode_kriteria' => 'CF',
                 'nama'          => 'Prestasi Akademik & Non Akademik',
                 'type'          => 'Core Factor',
-                'bobot'         => 5
+                'bobot'         => 3
             ],
             [
                 'kode_kriteria' => 'SF',
                 'nama'          => 'Karya Ilmiah',
                 'type'          => 'Secondary Factor',
-                'bobot'         => 3
+                'bobot'         => 5
             ],
             [
                 'kode_kriteria' => 'SF',
                 'nama'          => 'Bahasa Asing',
                 'type'          => 'Secondary Factor',
-                'bobot'         => 3
+                'bobot'         => 5
             ],
         ]);
 

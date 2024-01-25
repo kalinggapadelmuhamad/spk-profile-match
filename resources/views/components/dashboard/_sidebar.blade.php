@@ -56,7 +56,7 @@
 
 
         <li class="nav-item {{ $page === 'laporan' ? 'active' : '' }}">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{ route('laporan.index') }}">
                 <i class="fas fa-fw fa-file-pdf"></i>
                 <span>Laporan</span>
             </a>
@@ -86,22 +86,6 @@
             <span>Profile</span>
         </a>
     </li>
-
-
-
-    {{-- @if (Auth::user()->role == 'admin')
-        <li class="nav-item {{ $page === 'user' ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('indexUser') }}">
-                <i class="fas fa-fw fa-users-cog"></i>
-                <span>Data User</span></a>
-        </li>
-    @endif
-
-    <li class="nav-item {{ $page === 'profile' ? 'active' : '' }}">
-        <a class="nav-link" href="{{ route('indexProfile') }}">
-            <i class="fas fa-fw fa-user"></i>
-            <span>Data Profile</span></a>
-    </li> --}}
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

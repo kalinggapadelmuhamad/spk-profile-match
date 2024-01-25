@@ -1,6 +1,7 @@
 @php
     use App\Models\Penilaian;
     use App\Models\SubKriteria;
+    use App\Models\Hasil;
 @endphp
 @extends('layouts.dashboard')
 @section('title', 'Metode')
@@ -455,6 +456,12 @@
                                                 {{ (($ncf / $tcf) * 60 + ($nsf / $tsf) * 40) / 100 }}
                                             </td>
                                         </tr>
+                                        @php
+                                            Hasil::create([
+                                                'alternatif_id' => $alternatif->id,
+                                                'nilai' => (($ncf / $tcf) * 60 + ($nsf / $tsf) * 40) / 100,
+                                            ]);
+                                        @endphp
                                     @endif
                                 @endforeach
                                 {{-- <tr align="center">
