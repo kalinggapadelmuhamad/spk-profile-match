@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alternatif;
+use App\Models\Hasil;
 use App\Models\Kriteria;
 use Illuminate\Http\Request;
 
@@ -14,14 +15,44 @@ class LaporanController extends Controller
     public function index()
     {
         $page = 'laporan';
-        $kriterias = Kriteria::orderBy('kode_kriteria', 'asc')->get();
-        $alternatifs = Alternatif::orderBy('id')->get();
+        $hasils = Hasil::all();
 
+        $n = $hasils->count();
+        for ($i = 0; $i < $n - 1; $i++) {
+            for ($j = 0; $j < $n - $i - 1; $j++) {
+                if ($hasils[$j]->nilai < $hasils[$j + 1]->nilai) {
+                    $temp = $hasils[$j];
+                    $hasils[$j] = $hasils[$j + 1];
+                    $hasils[$j + 1] = $temp;
+                }
+            }
+        }
 
         return view('pages.laporan.index', compact(
             'page',
-            'kriterias',
-            'alternatifs'
+            'hasils',
+        ));
+    }
+
+    public function create()
+    {
+        $page = 'laporan';
+        $hasils = Hasil::all();
+
+        $n = $hasils->count();
+        for ($i = 0; $i < $n - 1; $i++) {
+            for ($j = 0; $j < $n - $i - 1; $j++) {
+                if ($hasils[$j]->nilai < $hasils[$j + 1]->nilai) {
+                    $temp = $hasils[$j];
+                    $hasils[$j] = $hasils[$j + 1];
+                    $hasils[$j + 1] = $temp;
+                }
+            }
+        }
+
+        return view('pages.laporan.create', compact(
+            'page',
+            'hasils',
         ));
     }
 

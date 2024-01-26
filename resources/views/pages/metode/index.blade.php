@@ -11,7 +11,7 @@
     <div class="mb-4">
         <div class="col-12 order-md-1 order-last">
             <h3>Metode</h3>
-            <p class="text-subtitle text-muted">Hasil Analisa Metode Profile Matching & Bublle Sort.</p>
+            <p class="text-subtitle text-muted">Hasil Analisa Metode Profile Matching.</p>
             @include('layouts.alert')
         </div>
         <section class="section">
