@@ -72,7 +72,7 @@
         </div>
         @if (Auth::user()->role == 'Admin')
             <li class="nav-item {{ $page === 'user' ? 'active' : '' }}">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{ route('users.index') }}">
                     <i class="fas fa-fw fa-users-cog"></i>
                     <span>User</span>
                 </a>
